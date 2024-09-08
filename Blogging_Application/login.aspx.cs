@@ -19,7 +19,7 @@ namespace blog
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            if (true || ValidateUser(username, password))
+            if (ValidateUser(username, password))
             {
                 Session["Username"] = username;
 
@@ -34,7 +34,7 @@ namespace blog
 
         private bool ValidateUser(string username, string password)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["user"].ConnectionString;
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             string query = "SELECT password FROM [User] WHERE username = @Username";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

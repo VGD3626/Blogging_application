@@ -84,6 +84,7 @@ namespace Blogging_Application
 
                         Label authorLabel = new Label { Text = "Author:", Font = { Name = "Bahnschrift" }, Height = 28 };
                         TextBox authorText = new TextBox { Text = reader["author"].ToString(), Font = { Name = "Bahnschrift" }, Height = 28, BackColor = System.Drawing.Color.FromArgb(230, 230, 255), BorderStyle = BorderStyle.None, Enabled = false };
+                        authorText.Enabled = false;
 
                         Label dateLabel = new Label { Text = "Date:", Font = { Name = "Bahnschrift" }, Height = 28 };
                         TextBox dateText = new TextBox { Text = reader["date"].ToString(), Font = { Name = "Bahnschrift" }, Height = 28, BackColor = System.Drawing.Color.FromArgb(230, 230, 255), BorderStyle = BorderStyle.None, Enabled = false };
@@ -127,7 +128,7 @@ namespace Blogging_Application
             {
                 command = new SqlCommand("UPDATE Blog SET content = @Content, date = @Date WHERE title = @Title AND author = @Author", connection);
                 command.Parameters.AddWithValue("@Content", blogContent.Text);
-                command.Parameters.AddWithValue("@Date", DateTime.Now.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@Date", DateTime.Now.ToString());
                 command.Parameters.AddWithValue("@Title", selectedTitle);
                 command.Parameters.AddWithValue("@Author", Session["Username"]);
                 connection.Open();
@@ -192,6 +193,9 @@ namespace Blogging_Application
                 {
                     blogContent.Text = reader["content"].ToString();
                     dateText.Text = reader["date"].ToString();
+                    authorText.Text = Session["Username"].ToString();
+                    authorText.Enabled = false;
+                    dateText.Enabled = false;   
                 }
                 reader.Close();
                 connection.Close();
