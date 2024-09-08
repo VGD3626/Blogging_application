@@ -6,77 +6,99 @@
 <head runat="server">
     <title>Blog Details</title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
+        body {
+            font-family: 'Bahnschrift', Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
         }
-        .auto-style8 {
-            height: 42px;
-            font-size: 22px;
+
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0066FF;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff;
         }
+
+        .header a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .header a:hover {
+            background-color: #0052cc;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .header .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
         .form-table {
             width: 100%;
             margin-top: 20px;
+            border-collapse: collapse;
         }
+
         .form-table td {
             padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
+
         .form-table input[type="text"] {
-            width: 300px;
-            padding: 5px;
-        }
-        .auto-style10 {
-            width: 48px;
-            height: 24px;
-        }
-        .auto-style12 {
-            height: 24px;
-        }
-        .auto-style13 {
-            height: 24px;
-            width: 492px;
-        }
-        .auto-style15 {
-            height: 24px;
-            width: 256px;
-        }
-        .auto-style17 {
-            width: 45px;
-            height: 24px;
-        }
-        .custom-style1 {
-            font-family: Bahnschrift;
-        }
-        .auto-style18 {
-            margin-left: 0px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
     </style>
 </head>
-<body class="custom-style1">
+<body>
     <form id="form1" runat="server">
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style8">
-                    <asp:LinkButton ID="linkbtnhome" runat="server" BackColor="#CCCCFF" BorderStyle="None" Font-Bold="True" Font-Italic="False" Font-Names="Bahnschrift" Font-Size="Medium" Font-Underline="False" ForeColor="#0066FF" Height="38px" OnClick="LinkbtnLogo_Click" OnClientClick="on" Width="705px">Blogging Application</asp:LinkButton>
-                    <asp:LinkButton ID="linkbtnFeed" runat="server" BackColor="#DDDDFF" BorderStyle="None" Font-Bold="False" Font-Italic="False" Font-Names="Bahnschrift" Font-Size="Small" Font-Underline="False" ForeColor="Blue" Height="38px" OnClientClick="on" OnClick="LinkbtnFeed_Click" Width="133px" CssClass="auto-style18">Feed</asp:LinkButton>
-                    <asp:LinkButton ID="linkbtnMyBlogs" runat="server" BackColor="#DDDDFF" BorderStyle="None" Font-Bold="False" Font-Italic="False" Font-Names="Bahnschrift" Font-Size="Small" Font-Underline="False" ForeColor="Blue" Height="38px" OnClientClick="on" OnClick="LinkbtnMyBlogs_Click" Width="133px">My blogs</asp:LinkButton>
-                    <asp:LinkButton ID="linkbtnLogOut" runat="server" BackColor="#DDDDFF" BorderStyle="None" Font-Bold="False" Font-Italic="False" Font-Names="Bahnschrift" Font-Size="Small" Font-Underline="False" ForeColor="Blue" Height="38px" OnClientClick="on" OnClick="LinkbtnLogout_Click" Width="133px">Log out</asp:LinkButton>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
+        <div class="header">
+            <div class="logo">
+                <asp:LinkButton ID="linkbtnhome" runat="server" OnClick="LinkbtnLogo_Click">Blogging Application</asp:LinkButton>
+            </div>
+            <div class="nav-links">
+                <asp:LinkButton ID="linkbtnFeed" runat="server" OnClick="LinkbtnFeed_Click">Feed</asp:LinkButton>
+                <asp:LinkButton ID="linkbtnMyBlogs" runat="server" OnClick="LinkbtnMyBlogs_Click">My Blogs</asp:LinkButton>
+                <asp:LinkButton ID="linkbtnAddNew" runat="server" OnClick="linkbtnAddNew_Click">Write</asp:LinkButton>
+                <asp:LinkButton ID="linkbtnLogOut1" runat="server" OnClick="LinkbtnLogout_Click">Log Out</asp:LinkButton>
+            </div>
+        </div>
 
-        <!-- Blog Details Form -->
-    <table class="auto-style1">
-        <tr>
-            <td>
-        <asp:PlaceHolder ID="BlogPlaceHolder" runat="server"></asp:PlaceHolder>
-            </td>
-        </tr>
-    </table>
-        <p>
-            &nbsp;</p>
+        <div class="main-content">
+            <!-- Blog Details Form -->
+            <asp:Label ID="LblLetsExplore" runat="server" Text="----" Font-Bold="True" Font-Size="XX-Large" ForeColor="#3399FF"></asp:Label>
+            <br />
+            <br/>
+            <asp:PlaceHolder ID="BlogPlaceHolder" runat="server"></asp:PlaceHolder>
+        </div>
     </form>
-    </body>
+</body>
 </html>
