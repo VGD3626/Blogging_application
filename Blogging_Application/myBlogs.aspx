@@ -119,9 +119,6 @@
                 <asp:LinkButton ID="linkbtnhome1" runat="server" OnClick="LinkbtnLogo_Click">Blogging Application</asp:LinkButton>
             </div>
             <div class="nav-links">
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkbtnLogo_Click" CausesValidation="false">
-    Blogging Application
-                </asp:LinkButton>
 
                 <asp:LinkButton ID="linkbtnFeed1" runat="server" OnClick="LinkbtnFeed_Click" CausesValidation="false">
     Feed

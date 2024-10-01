@@ -17,12 +17,16 @@ namespace Blogging_Application
             {
                 Response.Redirect("~/login.aspx");
             }
-            titleText.Text = "Enter the title here...";
-            blogContent.Text = "Write your thoughts...";
-            authorText.Text = Session["Username"].ToString();
-            authorText.Enabled = false;
-            dateText.Text = DateTime.Now.ToString();
-            dateText.Enabled = false;
+
+            if (!IsPostBack)
+            {
+                titleText.Text = "Enter the title here...";
+                blogContent.Text = "Write your thoughts...";
+                authorText.Text = Session["Username"].ToString();
+                authorText.Enabled = false;
+                dateText.Text = DateTime.Now.ToString();
+                dateText.Enabled = false;
+            }
         }
 
         protected void btnCreateBlog_Click(object sender, EventArgs e)

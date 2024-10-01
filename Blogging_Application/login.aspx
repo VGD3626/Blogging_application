@@ -135,7 +135,7 @@
             <br />
 
             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" BackColor="#0066FF" Font-Bold="True" Font-Names="bahnschrift, small" ForeColor="White" />
-            <asp:Button ID="btnRegisterRedirect" runat="server" Text="Register" OnClientClick="btnRegisterRedirect_Click" BackColor="#0066FF" Font-Bold="True" Font-Names="Bahnschrift" ForeColor="White" />
+            <asp:Button ID="btnRegisterRedirect" runat="server" Text="Register" OnClientClick="window.location.href='Signup.aspx'; return false;" BackColor="#0066FF" Font-Bold="True" Font-Names="Bahnschrift" ForeColor="White" />
 
         </div>
     </form>

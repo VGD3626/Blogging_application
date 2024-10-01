@@ -98,7 +98,7 @@
                         <asp:Label ID="titleLabel" runat="server" Text="Title:" Font-Bold="True" Font-Name="Bahnschrift" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        
-                        <asp:TextBox ID="titleText" runat="server" Font-Name="Bahnschrift" Height="28px" BackColor="#E6E6FF" BorderStyle="None" AutoPostBack="false" Width="100%" />
+                        <asp:TextBox ID="titleText" runat="server" Font-Name="Bahnschrift" Height="28px" BackColor="#E6E6FF" BorderStyle="None" AutoPostBack="False" Width="100%" />
                         <asp:RequiredFieldValidator ID="rfvTitle" runat="server" ControlToValidate="titleText" ErrorMessage="Title is required." ForeColor="Red" />
                         &nbsp;</div>
                     <div class="form-group">
